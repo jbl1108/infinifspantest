@@ -1,0 +1,15 @@
+<infinispan>
+  <jgroups/>
+  <cache-container default-cache="repl">
+    <transport/>
+    <replicated-cache name="repl" mode="SYNC" >
+      <persistence>
+        <rocksdb-store path="/tmp/rocksdb/data">
+          <expiration path="/tmp/rocksdb/expired"/>
+          <property name="database.max_background_compactions">2</property>
+          <property name="data.write_buffer_size">512MB</property>
+        </rocksdb-store>
+      </persistence>
+    </replicated-cache>
+  </cache-container>
+</infinispan>
