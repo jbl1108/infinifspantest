@@ -1,0 +1,7 @@
+FROM adoptopenjdk/openjdk13:latest
+RUN mkdir /opt/app
+
+COPY ./target/libs/* /opt/app/libs/
+COPY ./target/infinispantest-1.0.0-SNAPSHOT.jar /opt/app
+WORKDIR /opt/app/
+ENTRYPOINT ["java", "-cp","infinispantest-1.0.0-SNAPSHOT.jar:./libs/*","dk.incoding.PutGetMain", "get"]

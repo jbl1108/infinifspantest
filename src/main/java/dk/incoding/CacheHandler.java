@@ -5,7 +5,7 @@ import org.infinispan.manager.DefaultCacheManager;
 
 import java.io.IOException;
 
-public class CacheHandler {
+class CacheHandler {
 
     private static CacheHandler instance;
     private static Cache<Integer, String> cache;
